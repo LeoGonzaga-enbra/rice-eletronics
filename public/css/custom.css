@@ -1,0 +1,400 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Handling Updates
+-----------------------------------------------------------------*/
+
+/* Certification badge strip in the masthead.
+   NOTE: do NOT name this class "top-advert" / "advert" / "ad" - EasyList carries
+   a generic rule (##.top-advert) that hides it in Brave, uBlock Origin, AdBlock
+   Plus and AdGuard on every site. Padding preserved from the theme default. */
+.cert-badges {
+	padding: 5px;
+	border: 0;
+}
+
+#header-wrap {
+	background-color: #2e82ea;
+}
+
+#header-wrap .menu-container > .menu-item > .menu-link {
+	color: #fff !important;
+}
+
+#top-search-trigger {
+	color: #fff !important;
+}
+
+.breaking-news {
+	background-color: #5e5e5e !important;
+}
+
+.breaking-news a {
+	color: #fff;
+}
+
+.bg-danger {
+	background-color: #d2221b !important;
+}
+
+.grid-filter li.activeFilter a {
+	background-color: #1a3764;
+}
+
+.bi-phone::before {
+  content:url("/images/home/services-1.webp");
+}
+
+.bi-eye::before {
+  content:url("/images/home/services-2.webp");
+}
+
+.bi-star::before {
+  content:url("/images/home/services-3.webp");
+}
+
+.bi-camera-video::before {
+  content:url("/images/home/services-4.webp");
+}
+
+.bi-mouse::before {
+  content:url("/images/home/services-5.webp");
+}
+
+.bi-fire::before {
+  content:url("/images/home/services-6.webp");
+}
+.top-links-contact {
+  padding: 12px;
+  line-height: calc(var(--cnvs-topbar-height) - 24px);
+  font-weight: var(--cnvs-topbar-font-weight);
+  text-transform: var(--cnvs-topbar-font-transform);
+  color: var(--cnvs-topbar-color);
+}
+
+.slider-caption h2 {
+	font-size: 3.5rem;
+}
+
+@media (max-width: 767px) {
+	.slider-caption h2 {
+		font-size: 1.75rem;
+	}
+}
+
+.slider-caption p {
+	line-height: 1.1;
+}
+
+:root {
+  --cnvs-slider-caption-width: 950px;
+  --cnvs-slider-caption-p-size: 2.5rem;
+}
+
+.header-stick .col-lg-3 {
+	align-self: center;
+}
+
+.product .product-image img {
+	width: auto;
+}
+
+.bi-heart::before {
+  content:url("/images/home/moto-icon-1.webp");
+}
+
+.bi-file-earmark-richtext::before {
+  content:url("/images/home/moto-icon-2.webp");
+}
+
+.bi-moto3::before {
+  content:url("/images/home/moto-icon-3.webp");
+}
+
+.bi-moto4::before {
+  content:url("/images/home/moto-icon-4.webp");
+}
+
+.bi-check-lg::before {
+  content:url("/images/home/moto-icon-5.webp");
+}
+
+.bi-lightbulb::before {
+  content:url("/images/home/moto-icon-6.webp");
+}
+
+#secondary ul {
+	margin-left: 20px;
+}
+
+
+#secondary ol {
+	margin-left: 20px;
+}
+
+
+.fslider .slide > a > img {
+	width:65%;
+}
+
+.product {
+	padding-top: 0px;
+}
+
+.product-image {
+	padding-top:0px;
+	margin-top:0px;
+}
+
+
+h4.team-corporate-name {
+	font-size: 1.25rem;
+}
+
+.safe-icons {
+  float: left;
+  padding-right: 10px;
+  padding-top: 10px;
+  width: 100px;
+  clear: both;
+  overflow: hidden;
+}
+
+.safe-icons img {
+  width: 100px;
+}
+
+
+.safety-reimagined-badge {
+  width: 400px;
+}
+
+a.services-classic-figure img {
+	width: 100%;
+	height: 100%;
+}
+
+.home-eco .grid-inner {
+	padding: 1px;
+}
+
+p.team-corporate-status {
+	padding-right: 20px;
+}
+
+.sub-menu-container .menu-item {
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+}
+
+.sub-menu-container .menu-link {
+	--cnvs-primary-menu-submenu-padding-y: 2px;
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
+	line-height: 1.2;
+}
+
+.is-expanded-menu .menu-item:not(.mega-menu) > .sub-menu-container {
+	padding-top: 8px !important;
+	padding-bottom: 8px !important;
+}
+
+/* Footer */
+#footer {
+	background-color: #000;
+}
+
+#footer .footer-widgets-wrap .row {
+	--bs-gutter-x: 4rem;
+}
+
+#footer .footer-nav-widget ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+#footer .footer-nav-widget ul li {
+	padding: 6px 0;
+}
+
+#footer .footer-nav-widget ul li::before {
+	content: "›";
+	margin-right: 8px;
+	color: #aaa;
+}
+
+#footer.dark .footer-widgets-wrap .footer-nav-widget ul li a {
+	color: #fff;
+}
+
+#footer.dark .footer-widgets-wrap .footer-nav-widget ul li a:hover {
+	color: #ccc;
+}
+
+.footer-moto-logo img {
+	width: 300px;
+	height: auto;
+}
+
+#copyrights {
+	background-color: #2e82ea !important;
+	border-top: none;
+}
+
+#copyrights,
+#copyrights a {
+	color: #fff;
+}
+
+.footer-contact-offices {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.footer-office {
+	color: #ccc;
+	line-height: 1.7;
+}
+
+.footer-office strong {
+	color: #fff;
+}
+
+.top-links a {
+	color: #8c8c8c;
+}
+
+.is-expanded-menu .sticky-header #header-wrap {
+	background-color: #2e82ea;
+}
+
+.content-wrap {
+	padding-bottom: 0;
+}
+
+#secondary ul {
+	margin-left: 30px;
+}
+
+
+#secondary ol {
+	margin-left: 30px;
+}
+
+.product {
+	padding-top: 0px;
+}
+
+.product-image {
+	padding-top:0px;
+	margin-top:0px;
+}
+
+.safe-icons {
+  float: left;
+  padding-right: 10px;
+  padding-top: 10px;
+  width: 100px;
+  clear: both;
+  overflow: hidden;
+}
+
+.safe-icons img {
+  width: 100px;
+}
+
+
+.safety-reimagined-badge {
+  width: 400px;
+}
+
+#secondary {
+	padding-bottom: 40px;
+}
+
+.top-search-form .form-control::placeholder {
+	color: #fff;
+}
+
+.expanded-menu .sub-menu-container .menu-item > .menu-link {
+  color: #fff;
+}
+
+body:not(.is-expanded-menu) .menu-container.d-block .menu-item,
+body:not(.is-expanded-menu) .menu-container.d-block .menu-item a,
+body:not(.is-expanded-menu) .menu-container.d-block .menu-item i {
+  color: #fff !important;
+}
+
+body:not(.is-expanded-menu) .menu-container.d-block .menu-item img {
+  filter: brightness(0) invert(1);
+}
+
+.menu-item .sub-menu-trigger {
+	color: #fff;
+}
+
+/* ----------------------------------------------------------------
+	Masthead certification logos + "View Certificates" links
+-----------------------------------------------------------------*/
+
+.cert-badges .cert-logo-link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5px;
+	text-decoration: none;
+	line-height: 1;
+}
+
+.cert-badges .cert-logo-link img {
+	display: block;
+	height: 50px;
+	width: auto;
+}
+
+.cert-badges .cert-logo-cta {
+	font-size: 9px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	white-space: nowrap;
+	color: var(--cnvs-themecolor, #1983b2);
+	border-bottom: 1px solid transparent;
+	transition: color .2s ease, border-color .2s ease;
+}
+
+.cert-badges .cert-logo-link:hover .cert-logo-cta,
+.cert-badges .cert-logo-link:focus-visible .cert-logo-cta {
+	color: #2e82ea;
+	border-bottom-color: currentColor;
+}
+
+.cert-badges .cert-logo-link:focus-visible {
+	outline: 2px solid var(--cnvs-themecolor, #1983b2);
+	outline-offset: 3px;
+}
+
+/* Certification page — organization sections */
+
+.cert-org + .cert-org {
+	border-top: 1px solid var(--cnvs-contrast-200, #e5e5e5);
+	padding-top: 24px;
+}
+
+.cert-org h3 {
+	font-size: 20px;
+	margin-bottom: 8px;
+}
+
+.cert-org ul {
+	margin-bottom: 0;
+}
+
+.cert-org ul li {
+	margin-bottom: 6px;
+}

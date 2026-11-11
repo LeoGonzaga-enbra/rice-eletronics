@@ -1,0 +1,25 @@
+/* Formulários nativos da Rice (substituem o MachForm). Herdam a fonte e as cores da página. */
+.rf-form{max-width:760px;margin:32px 0 48px;font:inherit;color:inherit}
+.rf-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
+.rf-field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.rf-field.rf-wide{grid-column:1 / -1}
+.rf-field label{font-size:16px;font-weight:600;line-height:1.3;margin:0}
+.rf-req{color:#b3261e}
+.rf-field input,.rf-field select,.rf-field textarea{
+  font:inherit;font-size:17px;line-height:1.4;color:#1c1c1c;background:#fff;
+  border:1px solid #9aa0a6;border-radius:3px;padding:11px 12px;width:100%;box-sizing:border-box}
+.rf-field textarea{resize:vertical;min-height:130px}
+.rf-field input:focus,.rf-field select:focus,.rf-field textarea:focus{
+  outline:2px solid #1c1c1c;outline-offset:1px;border-color:#1c1c1c}
+.rf-field .rf-invalid{border-color:#b3261e;box-shadow:inset 3px 0 0 #b3261e}
+.rf-actions{margin-top:28px}
+.rf-submit{font:inherit;font-size:17px;font-weight:700;letter-spacing:.3px;cursor:pointer;
+  color:#fff;background:var(--cnvs-themecolor,#1c1c1c);border:0;border-radius:3px;padding:13px 34px}
+.rf-submit:hover{filter:brightness(.88)}
+.rf-submit[disabled]{opacity:.55;cursor:wait}
+.rf-status{font-size:17px;margin:18px 0 0;min-height:1.4em}
+.rf-status.rf-ok{font-weight:600}
+.rf-status.rf-err{color:#b3261e;font-weight:600}
+.rf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cf-turnstile{margin-top:24px}
+@media (max-width:640px){.rf-grid{grid-template-columns:1fr}}

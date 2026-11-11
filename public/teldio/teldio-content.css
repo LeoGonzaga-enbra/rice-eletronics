@@ -1,0 +1,396 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200;300;400;600;700&display=swap');
+
+#teldio-content {
+  --td-font: "Libre Franklin", Helvetica, Arial, sans-serif;
+  --td-text: #888888;
+  --td-heading: #151515;
+  --td-body-bg: #ffffff;
+  --td-primary: #0d6efd;   /* CTA buttons, banner, "200+" stat */
+  --td-teal: #009390;      /* links, checkmark bullets */
+  --td-muted: #6c757d;
+  --td-light: #f8f9fa;
+  --td-border: #dee2e6;
+  --td-dark-text: #212529;
+}
+
+/* Reset — insulate against whatever the host page/theme already defines
+   ========================================================================== */
+
+#teldio-content {
+  all: initial; /* wipe any inherited host theme (color, font, line-height, etc.) */
+  display: block;
+}
+
+/* box-sizing and font-family must come AFTER "all: initial" above, since
+   `all` resets every property (box-sizing included) back to its spec
+   default — order here is load-bearing, don't move it earlier. */
+#teldio-content,
+#teldio-content *,
+#teldio-content *::before,
+#teldio-content *::after {
+  box-sizing: border-box;
+}
+
+#teldio-content,
+#teldio-content * {
+  font-family: var(--td-font);
+}
+
+/* Neutralize the HOST SITE's own typography rules for every property we
+   don't explicitly set further down. This is the fix for real clashes
+   found on live dealer sites: call-ee.com's own site CSS draws a
+   FontAwesome check-circle in ::before on every <li> (it was overlapping
+   our bullet text once we stopped supplying our own ::before), and
+   commlineinc.com's own site CSS force-uppercases + letter-spaces every
+   <h2> (it was overriding our heading style). Neither of those host rules
+   is something we can edit — this block cancels them out inside our
+   scope instead. Keep this block ahead of the sections below, since those
+   intentionally re-enable a few of these (headings' own letter-spacing,
+   .fst-italic, etc.) on top of it. */
+#teldio-content *::before,
+#teldio-content *::after {
+  content: none !important;
+}
+
+#teldio-content h2, #teldio-content h3, #teldio-content h4, #teldio-content h5,
+#teldio-content p, #teldio-content li, #teldio-content a, #teldio-content span,
+#teldio-content strong, #teldio-content div, #teldio-content small {
+  text-transform: none;
+  letter-spacing: normal;
+  font-style: normal;
+  text-align: left;
+  background: none;
+  border: 0;
+}
+
+#teldio-content em,
+#teldio-content i {
+  font-style: italic;
+}
+
+#teldio-content ul,
+#teldio-content ol {
+  list-style: none;
+}
+
+/* Base
+   ========================================================================== */
+
+#teldio-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 15px 60px;
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--td-text);
+  background: var(--td-body-bg);
+  text-align: left;
+}
+
+#teldio-content p {
+  margin: 0 0 24px;
+}
+
+#teldio-content a {
+  color: var(--td-teal);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#teldio-content a:hover {
+  text-decoration: underline;
+}
+
+#teldio-content strong {
+  font-weight: 700;
+  color: #000;
+}
+
+#teldio-content img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+#teldio-content .img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Headings
+   ========================================================================== */
+
+#teldio-content h2,
+#teldio-content h3,
+#teldio-content h4,
+#teldio-content h5 {
+  font-family: var(--td-font);
+  color: var(--td-heading);
+  margin: 48px 0 16px;
+  line-height: 1.3;
+}
+
+#teldio-content h2:first-child,
+#teldio-content h3:first-child,
+#teldio-content h4:first-child {
+  margin-top: 0;
+}
+
+#teldio-content h2 { font-size: 32px; font-weight: 200; }
+#teldio-content h3 { font-size: 28px; font-weight: 200; }
+#teldio-content h4 { font-size: 20px; font-weight: 300; }
+#teldio-content h5 { font-size: 22px; font-weight: 300; margin-top: 32px; }
+
+#teldio-content .fw-bold { font-weight: 700 !important; }
+
+/* Lists — standard bulleted list
+   ========================================================================== */
+
+#teldio-content ul {
+  list-style: disc;
+  margin: 0 0 24px;
+  padding-left: 24px;
+}
+
+#teldio-content ul li {
+  padding: 0 0 8px 4px;
+  font-size: 18px;
+  overflow: visible; /* host theme sets "overflow: hidden" on every <li> (its own
+    #main-content li rule, seen live on call-ee.com) which was clipping our
+    disc marker since "outside" markers render just outside the li's box —
+    this is why bullets were rendering invisible even though every marker
+    property checked out fine */
+  position: static;
+}
+
+/* Text utilities
+   ========================================================================== */
+
+#teldio-content .text-center { text-align: center; }
+#teldio-content .text-white { color: #fff !important; }
+#teldio-content .text-white h3 { color: #fff; }
+#teldio-content .text-muted { color: var(--td-muted) !important; }
+#teldio-content .text-dark { color: var(--td-dark-text) !important; }
+#teldio-content .text-primary { color: var(--td-primary) !important; }
+#teldio-content .text-uppercase { text-transform: uppercase; }
+#teldio-content .fst-italic { font-style: italic; }
+#teldio-content .small { font-size: 14px; }
+
+#teldio-content .display-4 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Spacing utilities (Bootstrap-style, 1 unit = 8px)
+   ========================================================================== */
+
+#teldio-content .mb-0 { margin-bottom: 0 !important; }
+#teldio-content .mb-2 { margin-bottom: 8px !important; }
+#teldio-content .mb-3 { margin-bottom: 16px !important; }
+#teldio-content .mb-4 { margin-bottom: 24px !important; }
+#teldio-content .mb-5 { margin-bottom: 48px !important; }
+#teldio-content .mt-2 { margin-top: 8px !important; }
+#teldio-content .mt-3 { margin-top: 16px !important; }
+#teldio-content .mt-4 { margin-top: 24px !important; }
+#teldio-content .mt-5 { margin-top: 48px !important; }
+#teldio-content .my-5 { margin-top: 48px !important; margin-bottom: 48px !important; }
+#teldio-content .me-2 { margin-right: 8px !important; }
+#teldio-content .me-4 { margin-right: 24px !important; }
+#teldio-content .ms-0 { margin-left: 0 !important; }
+#teldio-content .p-4 { padding: 24px !important; }
+#teldio-content .p-5 { padding: 48px !important; }
+#teldio-content .ps-4 { padding-left: 24px !important; }
+#teldio-content .px-5 { padding-left: 48px !important; padding-right: 48px !important; }
+
+/* Flex utilities
+   ========================================================================== */
+
+#teldio-content .d-flex { display: flex; }
+#teldio-content .flex-wrap { flex-wrap: wrap; }
+#teldio-content .flex-grow-1 { flex-grow: 1; }
+#teldio-content .align-items-center { align-items: center; }
+#teldio-content .gap-3 { gap: 16px; }
+
+/* Borders / surfaces
+   ========================================================================== */
+
+#teldio-content .border { border: 1px solid var(--td-border) !important; }
+#teldio-content .border-4 { border-width: 4px !important; }
+#teldio-content .border-start { border-left: 1px solid var(--td-border); border-top: 0; border-right: 0; border-bottom: 0; }
+#teldio-content .border-bottom { border-bottom: 1px solid var(--td-border); }
+#teldio-content .bg-light { background-color: var(--td-light) !important; }
+#teldio-content .bg-primary { background-color: var(--td-primary) !important; }
+#teldio-content .rounded { border-radius: 0 !important; } /* site disables Bootstrap's rounded corners */
+#teldio-content .shadow-sm { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075) !important; }
+
+/* "In Practice" callout boxes — two variants used across the pages */
+
+#teldio-content .bg-light.border-start.border-4,
+#teldio-content .border-start.border-4.bg-light {
+  padding: 24px 24px 24px 24px;
+}
+
+#teldio-content .bg-light.border.rounded,
+#teldio-content .p-4.bg-light.border {
+  padding: 24px;
+}
+
+/* CTA banner ("Ready to Connect Your Systems?")
+   ========================================================================== */
+
+#teldio-content .bg-primary.text-white {
+  text-align: center;
+}
+
+#teldio-content .bg-primary.text-white h3 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 28px;
+  font-weight: 200;
+  color: #fff;
+}
+
+/* Badges (module chips)
+   ========================================================================== */
+
+#teldio-content .badge {
+  display: inline-block;
+  font-size: 13.5px;
+  font-weight: 400;
+  padding: 5px 9px;
+  border-radius: 4px;
+  background-color: var(--td-light);
+  color: var(--td-dark-text);
+  line-height: 1.4;
+}
+
+#teldio-content .badge.border {
+  border: 1px solid var(--td-border) !important;
+}
+
+/* Cards
+   ========================================================================== */
+
+#teldio-content .card {
+  background: #fff;
+  border: 1px solid var(--td-border);
+  border-radius: 4px;
+}
+
+#teldio-content .card.shadow-sm {
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);
+}
+
+#teldio-content .card-header {
+  background-color: var(--td-light);
+  color: var(--td-muted);
+  font-weight: 700;
+  padding: 8px 16px;
+}
+
+#teldio-content .card-body {
+  padding: 16px;
+}
+
+/* Sidebar "Teldio" link card */
+
+#teldio-content .list-group {
+  border-radius: 0;
+}
+
+#teldio-content .list-group-flush .list-group-item {
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+}
+
+#teldio-content .list-group-item {
+  display: block;
+  padding: 8px 16px;
+  font-size: 18px;
+  color: var(--td-dark-text);
+  border-top: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  text-decoration: none;
+}
+
+#teldio-content .list-group-item:last-child {
+  border-bottom: 0;
+}
+
+#teldio-content .list-group-item-action:hover {
+  background-color: var(--td-light);
+  color: var(--td-teal);
+  text-decoration: none;
+}
+
+/* Buttons
+   ========================================================================== */
+
+#teldio-content .btn {
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+#teldio-content .btn-light {
+  background-color: var(--td-light);
+  color: #000;
+  border-color: var(--td-light);
+}
+
+#teldio-content .btn-lg {
+  padding: 8px 16px;
+  border-radius: 4.8px;
+  font-size: 18px;
+}
+
+#teldio-content .btn.px-5 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* Pill-style call-to-action buttons ("Download the Overview", "Watch the Demo") */
+
+#teldio-content .button.btn-primary {
+  display: inline-block;
+  background-color: var(--td-primary);
+  color: #fff !important;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.72px;
+  text-decoration: none;
+  border: 1px solid #fff;
+}
+
+#teldio-content .button.btn-primary:hover {
+  background-color: #0b5ed7;
+  text-decoration: none;
+}
+
+#teldio-content .button-large {
+  padding: 17px 40px 15px;
+}
+
+#teldio-content .button-rounded {
+  border-radius: 3px;
+}
+
+/* Images with captions ("text-center my-5" diagram blocks) */
+
+#teldio-content .text-center.my-5 img {
+  margin: 0 auto;
+}
+
+#teldio-content .text-center.my-5 p {
+  margin-bottom: 0;
+}
