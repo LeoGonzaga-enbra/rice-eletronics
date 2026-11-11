@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "rice-electronics",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    // o Worker só entra em /api/*; o resto é arquivo estático servido direto
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    // domínio principal; o sem www redireciona pra ele (só vale depois de apontar o DNS)
+    "CANONICAL_HOST": "www.riceelectronics.com",
+    // remetente verificado no Resend e destino dos leads (LEAD_TO aceita vários, separados por vírgula)
+    "LEAD_FROM": "",
+    "LEAD_TO": "",
+    "TURNSTILE_SITE_KEY": ""
+  },
+  "observability": { "enabled": true }
+  // segredos (wrangler secret put): RESEND_API_KEY, TURNSTILE_SECRET
+}
